@@ -8,7 +8,7 @@ Authors@R:
            role = c("aut", "cre"),
            email = "wpb27@case.edu",
            comment = c(ORCID = "0000-0002-2597-9732"))
-Description: Social risk is increasingly becoming a critical component of health
+Description: Social risks are increasingly becoming a critical component of health
     care research. This package identifies social ris, using varying taxonomies
     from administrative health care data.
 License: MIT + file LICENSE
