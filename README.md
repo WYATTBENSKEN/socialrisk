@@ -7,7 +7,8 @@
 <!-- badges: end -->
 
 The goal of `socialrisk` is to create an efficient way to identify
-patient’s social risk from administrative health care data.
+patient’s social risk from administrative health care data. More
+information will be completed as the package is developed.
 
 ## Installation
 
@@ -20,3 +21,5 @@ The development version of `socialrisk` can be downloaded from
 # install.packages("devtools")
 devtools::install_github("WYATTBENSKEN/socialrisk")
 ```
+
+## Examples will be provided shortly
