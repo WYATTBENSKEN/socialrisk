@@ -1,0 +1,27 @@
+Package: socialrisk
+Type: Package
+Title: Indentifying Patient Social Risk from Administrative Health Care Data
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "Wyatt",
+           family = "Bensken",
+           role = c("aut", "cre"),
+           email = "wpb27@case.edu",
+           comment = c(ORCID = "0000-0002-2597-9732"))
+Description: Social risk is increasingly becoming a critical component of health
+    care research. This package identifies social ris, using varying taxonomies
+    from administrative health care data.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.1
+Imports:
+    dplyr,
+    multimorbidity
+URL: https://github.com/WYATTBENSKEN/multimorbidity
+BugReports: https://github.com/WYATTBENSKEN/multimorbidity/issues
+Suggests: 
+    rmarkdown,
+    knitr
+VignetteBuilder: knitr
