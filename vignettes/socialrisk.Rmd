@@ -1,0 +1,99 @@
+---
+title: "Working with the `socialrisk` Package"
+author: "Wyatt P. Bensken"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{socialrisk}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup, include = FALSE}
+
+devtools::load_all(".")
+library(multimorbidity)
+library(tidyverse)
+
+```
+
+# Introduction
+
+The goal of `socialrisk` is to create an efficient way to identify social risk from administrative health care data using ICD-10 diagnosis codes.
+
+# Load Sample Data
+
+We've created a sample dataset of ICD-10 administrative data which we can load in.
+
+```{r}
+i10_wide
+```
+
+
+## An Important Note: Transforming Data
+
+These data are setup in "wide" format, with multiple rows per patient which represent multiple claims/encounters. In order to use the `socialrisk()` function, we need the data in long format with a single column for diagnoses. To do this, we will use the `prepare_data()` function from the `multimorbidity` package to transform our data.
+
+# Preparing the Data
+
+The first step is to "prepare" our data for the subsequent algorithms. The end-goal is to have a dataset that has 1 column with a patient ID,  1 column which contains the diagnosis code, and 1 column which will note if it's ICD-9 (9) or ICD-10 (10). There are other variables that may be of interest depending on the specification including type (inpatient or outpatient) and date.
+
+The arguments used here are (in order): telling it the name of our data, specifying the ID variable, noting if it's wide or long (long would be if the data is in our final format), the prefix for the diagnosis columns (dx1, dx2, dx3 would be "dx"), noting if our data include a HCPCS/CPT column, specifying the variable which notes if it's ICD-9 or ICD-10, specifying the variable which tells us the type of visit (inpatient or outpatient), and finally specifying which column is the date.
+
+```{r}
+data <- prepare_data(dat = i10_wide,
+                     id = patient_id,
+                     style = "wide",
+                     prefix_dx = "dx",
+                     hcpcs = "no",
+                     version_var = icd_version,
+                     type_name = visit_type,
+                     date = date_of_serv)
+```
+
+```{r, echo = FALSE}
+head(data, 10)
+```
+
+# Social Risk
+
+Now, we can run our various social risk functions, with varying taxonomies.
+
+## Centers for Medicare and Medicaid Services (CMS)
+
+```{r}
+cms <- socialrisk(dat = data, id = patient_id, dx = dx, taxonomy = "cms")
+```
+
+```{r, echo = FALSE}
+head(cms, 5)
+```
+
+## Missouri Hospital Association
+
+```{r}
+mha <- socialrisk(dat = data, id = patient_id, dx = dx, taxonomy = "mha")
+```
+
+```{r, echo = FALSE}
+head(mha, 5)
+```
+
+## SIREN - UCSF
+
+```{r}
+siren <- socialrisk(dat = data, id = patient_id, dx = dx, taxonomy = "siren")
+```
+
+```{r, echo = FALSE}
+head(siren, 5)
+```
+
+
