@@ -30,6 +30,9 @@ This function uses data which has been properly prepared to identify and flag
 social risks.
 }
 \examples{
+data <- multimorbidity::prepare_data(dat = i10_wide, id = patient_id, style = "wide",
+prefix_dx = "dx", hcpcs = "no", version_var = icd_version, type_name = visit_type,
+date = date_of_serv)
 socialrisk(dat = data, id = patient_id, dx = dx, taxonomy = "cms")
 
 }

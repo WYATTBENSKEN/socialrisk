@@ -24,13 +24,14 @@ Imports:
     rlang,
     tidyselect,
     tidyr,
-    stats
+    stats,
+    devtools,
+    multimorbidity
 URL: https://github.com/WYATTBENSKEN/multimorbidity
 BugReports: https://github.com/WYATTBENSKEN/multimorbidity/issues
 Suggests: 
     rmarkdown,
-    knitr,
-    multimorbidity
+    knitr
 VignetteBuilder: knitr
 Depends: 
     R (>= 2.10)
