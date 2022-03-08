@@ -17,11 +17,20 @@ LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.2
 Imports:
+    tidyverse,
     dplyr,
-    multimorbidity
+    magrittr,
+    stringr,
+    rlang,
+    tidyselect,
+    tidyr,
+    stats
 URL: https://github.com/WYATTBENSKEN/multimorbidity
 BugReports: https://github.com/WYATTBENSKEN/multimorbidity/issues
 Suggests: 
     rmarkdown,
-    knitr
+    knitr,
+    multimorbidity
 VignetteBuilder: knitr
+Depends: 
+    R (>= 2.10)
