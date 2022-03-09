@@ -25,8 +25,7 @@ Imports:
     tidyselect,
     tidyr,
     stats,
-    devtools,
-    multimorbidity
+    devtools
 URL: https://github.com/WYATTBENSKEN/multimorbidity
 BugReports: https://github.com/WYATTBENSKEN/multimorbidity/issues
 Suggests: 

@@ -37,13 +37,20 @@ With the introduction of the 10th Revision of the International Classification o
 
 Z-codes have been referred to as both “social determinants of health” as well “health-related social needs.” While oftentimes used interchangeably, these are distinct constructs and the lexicon around this has been of high attention recent. From this work, we first note that social determinants of health (SDoH) operate at the community level. These are the characteristics of the collective community, neither positive nor negative, which can affect health.15,16 When SDoH are adverse they engender social risk factors for individuals within the community. However, not every patient will identify or prioritize a social risk as a need that must be tended to. When a patient identifies a social risk factor as a priority for which assistance is needed, that risk becomes a need termed a health-related social needs (HRSN).
 
-There is notable divergence in the literature around which Z codes, and their conceptual domains, are part of social risk/social need analyses. First, CMS in their work has included Z55 through Z65 as the relevant Z codes to capture HRSN. This range of codes was expanded on by the Missouri Hospital Association to create 5 domains distinct domains (socioeconomic status, employment, housing, family and psychosocial), which have subsequently been used in additional studies (Supplemental Table 1). Finally, the third source which has provided a list and domains for Z codes is the Social Interventions Research and Evaluation Network (SIREN) at the University of California San Francisco. In the SIREN Compendium, which includes both ICD codes as well as HRSN codes for other taxonomies, there is a much wider range of ICD Z-codes, beyond Z55-Z65 that are included.
+There is notable divergence in the literature around which Z codes, and their conceptual domains, are part of social risk/social need analyses. First, CMS in their work has included Z55 through Z65 as the relevant Z codes to capture HRSN. This range of codes was expanded on by the Missouri Hospital Association to create 5 domains distinct domains (socioeconomic status, employment, housing, family and psychosocial), which have subsequently been used in additional studies. Finally, the third source which has provided a list and domains for Z codes is the Social Interventions Research and Evaluation Network (SIREN) at the University of California San Francisco. In the SIREN Compendium, which includes both ICD codes as well as HRSN codes for other taxonomies, there is a much wider range of ICD Z-codes, beyond Z55-Z65 that are included.
 
 This package allows one to implement any three of these approaches and taxonomies in their data using ICD-10 Z-codes to allow for flexibility and efficiency in identifying social risk and social needs from administrative claims data.
 
 ## Package and Function Options
 
-This package imports [`multimorbidity`](https://cran.r-project.org/package=multimorbidity) for its  main data cleaning functions: `prepare_data()`. Additionally, one could further use the `comorbidity_window()` function in `multimorbidity` to limit the time-frame of claims. More information on both of these can be found in the `multimorbidity` vignette [here](https://cran.r-project.org/web/packages/multimorbidity/vignettes/multimorbidity.html).
+### Data Cleaning
+
+This package includes a `clean_data()` function which allows us to obtain a cleaned dataset by specifying the dataset name, patient ID variable, whether the data is wide (multiple diagnosis columns) or long (single diagnosis column), as well as the prefix of the diagnoses columns. It's recommended that this is run on all datasets to prepare them for then running the `socialrisk()` function.
+
+```r
+clean_data(dat = i10_wide, id = patient_id, style = "wide", prefix_dx = "dx")
+```
+### Social Risk Codes
 
 There are three different taxonomies built into `socialrisk()` which are called with the `taxonomy` argument as such:
 
@@ -59,7 +66,5 @@ socialrisk(dat = data, id = id, dx = dx, taxonomy = "siren")
 | `mha` | [Decoding the Social Determinants of Health](https://www.mhanet.com/mhaimages/Policy_Briefs/PolicyBrief_SDOH.pdf) | The Missouri Hospital Association uses the same set of codes as CMS, but has put them into 5 conceptually meaningful categories, separate from the parent codes. | 
 | `siren` | [Compendium of medical terminology codes for social risk factors](https://sirenetwork.ucsf.edu/tools-resources/resources/compendium-medical-terminology-codes-social-risk-factors) | The SIREN compendium uses a broader range of codes (beyond Z-codes), has a larger number of conceptual categories, but notably excludes occupational exposures. |
 
-## Vignette
-
-*In Development*
+Please see the vignette for greater details on how to implement these functions.
 
