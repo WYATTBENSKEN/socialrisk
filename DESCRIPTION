@@ -1,7 +1,7 @@
 Package: socialrisk
 Type: Package
 Title: Identifying Patient Social Risk from Administrative Health Care Data
-Version: 0.0.0.9000
+Version: 0.5.0
 Authors@R: 
     person(given = "Wyatt",
            family = "Bensken",
