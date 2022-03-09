@@ -9,8 +9,12 @@ Authors@R:
            email = "wpb27@case.edu",
            comment = c(ORCID = "0000-0002-2597-9732"))
 Description: Social risks are increasingly becoming a critical component of health
-    care research. This package identifies social ris, using varying taxonomies
+    care research. This package identifies social risks using varying taxonomies
     from administrative health care data.
+    
+    Centers for Medicare and Medicaid Services (2021) <https://www.cms.gov/files/document/zcodes-infographic.pdf
+    Reidhead (2018) <https://www.mhanet.com/mhaimages/Policy_Briefs/PolicyBrief_SDOH.pdf>
+    A. Arons, S. DeSilvey, C. Fichtenberg, L. Gottlieb (2018) <https://sirenetwork.ucsf.edu/tools-resources/resources/compendium-medical-terminology-codes-social-risk-factors>
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true

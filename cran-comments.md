@@ -1,3 +1,9 @@
+## Resubmission
+This is a resubmission. In this version I have:
+
+* Fixed the spelling error identified int he DESCRIPTION
+* Added the proper references, in the format instructed, to the DESCRIPTION
+
 ## Test environments
 * local OS X install, R 4.1.2
 * win-builder (devel and release)
