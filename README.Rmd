@@ -16,13 +16,19 @@ knitr::opts_chunk$set(
 # socialrisk
 
 <!-- badges: start -->
+[![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/socialrisk)](https://cran.r-project.org/package=socialrisk)
+![CRAN\_Download\_Counter](http://cranlogs.r-pkg.org/badges/grand-total/socialrisk)
 <!-- badges: end -->
 
 The goal of `socialrisk` is to create an efficient way to identify social risk from administrative health care data using ICD-10 diagnosis codes.
 
 ## Installation
 
-`socialrisk` is not yet available on CRAN.
+You can install `socialrisk` from CRAN with:
+
+```r
+install.packages("socialrisk")
+```
 
 The development version of `socialrisk` can be downloaded from [GitHub](https://github.com/WYATTBENSKEN/socialrisk) with:
 
