@@ -1,4 +1,9 @@
+## This is a resubmission
+
+* I have fixed the notes that were detected during automatic checks
+
 ## Test environments
+
 * local OS X install, R 4.1.3
 * win-builder (devel and release)
 

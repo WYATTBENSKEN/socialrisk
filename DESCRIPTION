@@ -14,7 +14,7 @@ Description: Social risks are increasingly becoming a critical component of heal
     of ICD-10-CM Z-codes from administrative health care data. The conceptual
     taxonomies come from:
     Centers for Medicare and Medicaid Services (2021) <https://www.cms.gov/files/document/zcodes-infographic.pdf>,
-    Reidhead (2018) <https://www.mhanet.com/mhaimages/Policy_Briefs/PolicyBrief_SDOH.pdf>,
+    Reidhead (2018) <https://web.mhanet.com/>,
     A Arons, S DeSilvey, C Fichtenberg, L Gottlieb (2018) <https://sirenetwork.ucsf.edu/tools-resources/resources/compendium-medical-terminology-codes-social-risk-factors>.
 License: MIT + file LICENSE
 Encoding: UTF-8
@@ -28,8 +28,6 @@ Imports:
     rlang,
     tidyselect,
     tidyr,
-    stats,
-    devtools
 URL: https://github.com/WYATTBENSKEN/multimorbidity
 BugReports: https://github.com/WYATTBENSKEN/multimorbidity/issues
 Suggests: 
